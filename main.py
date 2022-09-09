@@ -14,6 +14,8 @@ carmanager = CarManager()
 
 screen.listen()
 screen.onkeypress(fun=turtle_player.move_up, key='Up')
+screen.onkey(fun=turtle_player.increase_speed, key='d')
+screen.onkey(fun=turtle_player.decrease_speed, key='a')
 
 game_is_on = True
 while game_is_on:
