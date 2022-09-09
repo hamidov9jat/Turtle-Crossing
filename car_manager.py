@@ -29,7 +29,7 @@ class CarManager:
 
     def move_cars(self):
         for car_ in self._cars:
-            if car_.xcor() < -310:
+            if car_.xcor() < -320:
                 self._cars.remove(car_)
             else:
                 # car_.forward(STARTING_MOVE_DISTANCE)
