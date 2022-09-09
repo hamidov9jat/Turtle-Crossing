@@ -9,6 +9,7 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 turtle_player = Player('turtle')
+level_board = Scoreboard()
 
 screen.listen()
 screen.onkeypress(fun=turtle_player.move, key='Up')
