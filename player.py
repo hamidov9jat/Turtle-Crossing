@@ -20,4 +20,3 @@ class Player(Turtle):
 
     def is_at_finish_line(self):
         return int(self.ycor()) > FINISH_LINE_Y
-
