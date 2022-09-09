@@ -12,7 +12,7 @@ turtle_player = Player('turtle')
 level_board = Scoreboard()
 
 screen.listen()
-screen.onkeypress(fun=turtle_player.move, key='Up')
+screen.onkeypress(fun=turtle_player.move_up, key='Up')
 
 game_is_on = True
 while game_is_on:
