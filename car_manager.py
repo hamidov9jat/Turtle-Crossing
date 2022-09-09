@@ -1,7 +1,6 @@
 import random
 from turtle import Turtle
 
-
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
@@ -10,7 +9,7 @@ NUMBER_OF_CARS = 15
 
 class CarManager:
     def __init__(self):
-        self._cars = []
+        self.all_cars = []
         self._car_speed = STARTING_MOVE_DISTANCE
         # self._car_max_speed = self._car_min_speed + MOVE_INCREMENT*3
 
@@ -25,12 +24,12 @@ class CarManager:
             new_y = random.randint(-250, 250)
             new_car.goto(310, new_y)
             # new_car.setheading(180)
-            self._cars.append(new_car)
+            self.all_cars.append(new_car)
 
     def move_cars(self):
-        for car_ in self._cars:
+        for car_ in self.all_cars:
             if car_.xcor() < -320:
-                self._cars.remove(car_)
+                self.all_cars.remove(car_)
             else:
                 # car_.forward(STARTING_MOVE_DISTANCE)
                 car_.backward(self._car_speed)
