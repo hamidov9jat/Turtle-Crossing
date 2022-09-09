@@ -16,6 +16,7 @@ screen.listen()
 screen.onkeypress(fun=turtle_player.move_up, key='Up')
 screen.onkey(fun=turtle_player.increase_speed, key='d')
 screen.onkey(fun=turtle_player.decrease_speed, key='a')
+screen.onkey(fun=turtle_player.reset_speed, key='s')
 
 game_is_on = True
 while game_is_on:
@@ -26,7 +27,7 @@ while game_is_on:
     carmanager.move_cars()
 
     # Detect collision with car
-    for car_ in carmanager._cars:
+    for car_ in carmanager.all_cars:
         if car_.distance(turtle_player) < 20:
             game_is_on = False
             level_board.game_over()
@@ -35,6 +36,7 @@ while game_is_on:
     if turtle_player.is_at_finish_line():
         turtle_player.go_to_start()
         carmanager.level_up()
+        turtle_player.reset_speed()
         level_board.next_level()
 
 screen.exitonclick()
